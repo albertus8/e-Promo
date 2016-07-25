@@ -47,15 +47,28 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/article_subheading" />
 
-        <Button
-            android:id="@+id/action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/edit_button"
+            android:layout_width="@dimen/cards_button_width"
+            android:layout_height="@dimen/cards_button_height"
+            android:layout_marginLeft="16dp"
+            app:srcCompat="@drawable/ic_border_color_black_24dp"
             android:layout_below="@+id/card_text"
+            android:layout_alignParentLeft="true"
             style="?android:attr/borderlessButtonStyle"
-            android:textColor="?attr/colorPrimary"
-            android:text="Detail" />
+            android:tint="@color/button_grey" />
 
+        <ImageButton
+            android:id="@+id/delete_button"
+            android:layout_width="@dimen/cards_button_width"
+            android:layout_height="@dimen/cards_button_height"
+            android:layout_marginLeft="70dp"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:layout_below="@+id/card_text"
+            android:layout_alignParentLeft="true"
+            style="?android:attr/borderlessButtonStyle"
+            android:tint="@color/button_grey"
+            />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
