@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent intent = new Intent(context, LoginActivity.class);
+                Intent intent = new Intent(context, AddPromoActivity.class);
                 context.startActivity(intent);
             }
         });
