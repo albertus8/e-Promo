@@ -20,7 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
         Button btn_lihatpromo = (Button) findViewById(R.id.caripromo);
         Button btn_login = (Button) findViewById(R.id.login);
         Button btn_addpromo = (Button) findViewById(R.id.tambahpromo);
-
+        Button btn_register = (Button) findViewById(R.id.register);
         btn_addpromo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +44,15 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, LoginActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, RegisterActivity.class);
                 context.startActivity(intent);
             }
         });
