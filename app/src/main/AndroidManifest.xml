@@ -18,7 +18,6 @@
         <activity android:name=".AddPromoActivity">
         </activity>
         <activity android:name=".RegisterActivity">
-
         </activity>
         <activity android:name=".MainActivity" >
         </activity>
@@ -28,7 +27,7 @@
 
         </activity>
     </application>
-    
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
