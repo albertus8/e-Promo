@@ -14,7 +14,6 @@ public class Config {
     public static final String URL_UPDATE_EMP="http://192.168.1.105:81/epromo/update.php";
     // Link Untuk Hapus Data
     public static final String URL_DELETE_EMP="http://192.168.1.105:81/epromo/delete.php?id=";
-    public static final String URL_ADD_GAMBAR="http://192.168.1.105:81/epromo/uploadGambar.php?id=";
 
     // Filed yang digunakan untuk dikirimkan ke Database, sesuaikan saja dengan Field di Tabel Mahasiswa
     //public static final String KEY_EMP_ID = "id";
@@ -23,7 +22,6 @@ public class Config {
     public static final String KEY_EMP_ALAMAT = "alamat";
     public static final String KEY_EMP_CP = "kontak";
     public static final String KEY_EMP_DESKRIPSI = "deskripsi";
-
     // Tags Format JSON
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_ID = "id";

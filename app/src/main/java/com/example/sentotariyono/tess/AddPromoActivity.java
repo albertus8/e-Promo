@@ -25,11 +25,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Hashtable;
 
 /**
  * Created by Sentot Ariyono on 7/23/2016.
@@ -44,9 +56,9 @@ public class AddPromoActivity extends AppCompatActivity {
     private ImageView imageView;
     private Bitmap bitmap;
     private Uri filePath;
-    public static final String UPLOAD_URL = "http://simplifiedcoding.16mb.com/ImageUpload/upload.php";
-    public static final String UPLOAD_KEY = "image";
-    public static final String TAG = "MY MESSAGE";
+    public static final String UPLOAD_URL = "http://192.168.1.105:81/epromo/upload.php";
+    private String KEY_IMAGE = "image";
+    private String KEY_NAME = "name";
 
     private int PICK_IMAGE_REQUEST = 1;
     //end copas
@@ -65,6 +77,7 @@ public class AddPromoActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
                 TambahData();
                 uploadImage();
             }
@@ -91,10 +104,11 @@ public class AddPromoActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-            filePath = data.getData();
+            Uri filePath = data.getData();
             try {
+                //Getting the Bitmap from Gallery
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                //Setting the Bitmap to ImageView
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -110,38 +124,54 @@ public class AddPromoActivity extends AppCompatActivity {
         return encodedImage;
     }
 
-    private void uploadImage() {
-        class UploadImage extends AsyncTask<Bitmap, Void, String> {
+    private void uploadImage(){
+        //Showing the progress dialog
+        final ProgressDialog loading = ProgressDialog.show(this,"Uploading...","Please wait...",false,false);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        //Disimissing the progress dialog
+                        loading.dismiss();
+                        //Showing toast message of the response
+                        Toast.makeText(AddPromoActivity.this, s , Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        //Dismissing the progress dialog
+                        loading.dismiss();
 
-            ProgressDialog loading;
-            RequestHandler rh = new RequestHandler();
-
+                        //Showing toast
+                        Toast.makeText(AddPromoActivity.this, volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                }){
             @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(AddPromoActivity.this, "Uploading Image", "Please wait...", true, true);
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //Converting Bitmap to String
+                String image = getStringImage(bitmap);
+
+                //Getting Image Name
+                //String name = editTextName.getText().toString().trim();
+
+                //Creating parameters
+                Map<String,String> params = new Hashtable<String, String>();
+
+                //Adding parameters
+                params.put(KEY_IMAGE, image);
+                params.put(KEY_NAME, "tes");
+
+                //returning parameters
+                return params;
             }
+        };
 
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
-            }
+        //Creating a Request Queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            @Override
-            protected String doInBackground(Bitmap... params) {
-                Bitmap bitmap = params[0];
-                String uploadImage = getStringImage(bitmap);
-
-                HashMap<String, String> data = new HashMap<>();
-                data.put(UPLOAD_KEY, uploadImage);
-
-                String result = rh.sendPostRequest(UPLOAD_URL, data);
-
-                return result;
-            }
-        }
+        //Adding request to the queue
+        requestQueue.add(stringRequest);
     }
     // end copasan upload ========================
 
