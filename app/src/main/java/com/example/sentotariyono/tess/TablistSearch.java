@@ -2,9 +2,6 @@ package com.example.sentotariyono.tess;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -15,20 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 /**
- * Created by Sentot Ariyono on 7/11/2016.
+ * Created by Sentot Ariyono on 7/27/2016.
  */
-public class Tablist1Fragment extends Fragment {
+public class TablistSearch extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //return inflater.inflate(R.layout.tablist1, null);
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recycle_view, container, false);
 
-        ContentAdapter adapter = new ContentAdapter(recyclerView.getContext());
+        ContentAdapter adapter = new ContentAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
 
@@ -38,25 +32,13 @@ public class Tablist1Fragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
 
         return recyclerView;
-
-
     }
-
-
-
-
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public ImageButton btn_del;
-        public TextView title;
-        public TextView littledescription;
-        public ImageView picture;
+
         public ViewHolder(LayoutInflater inflater, ViewGroup parent ){
             super(inflater.inflate(R.layout.tablist1, parent, false));
-
-            title = (TextView)itemView.findViewById(R.id.card_title);
-            littledescription = (TextView)itemView.findViewById(R.id.card_text);
-            picture = (ImageView)itemView.findViewById(R.id.card_image);
 
             btn_del = (ImageButton)itemView.findViewById(R.id.delete_button);
             btn_del.setOnClickListener(new View.OnClickListener(){
@@ -81,21 +63,9 @@ public class Tablist1Fragment extends Fragment {
 
     public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder>{
         // Set numbers of List in RecyclerView.
-        private static final int LENGTH = 18;
-        private String[] mTitle;
-        private String[] mLittleDescription;
-        private Drawable[] pict;
-        public ContentAdapter(Context context){
-            Resources resources = context.getResources();
-            mTitle = resources.getStringArray(R.array.title);
-            mLittleDescription = resources.getStringArray(R.array.little_description);
-            TypedArray a = resources.obtainTypedArray(R.array.image);
-            pict = new Drawable[a.length()];
-            for (int i = 0; i<pict.length; i++){
-                pict[i] = a.getDrawable(i);
-            }
+        private static final int LENGTH = 5;
 
-            a.recycle();
+        public ContentAdapter(){
         }
 
         @Override
@@ -104,9 +74,7 @@ public class Tablist1Fragment extends Fragment {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position){
-            holder.picture.setImageDrawable(pict[position % pict.length]);
-            holder.title.setText(mTitle[position % mTitle.length]);
-            holder.littledescription.setText(mLittleDescription[position % mLittleDescription.length]);
+            // no-op
         }
 
         @Override
@@ -114,9 +82,4 @@ public class Tablist1Fragment extends Fragment {
             return LENGTH;
         }
     }
-
-
-
-
-    }
-
+}

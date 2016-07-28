@@ -21,6 +21,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Button btn_login = (Button) findViewById(R.id.login);
         Button btn_addpromo = (Button) findViewById(R.id.tambahpromo);
         Button btn_register = (Button) findViewById(R.id.register);
+
+
+
         btn_addpromo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

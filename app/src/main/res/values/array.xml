@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="little_description">
+        <item>Surabaya</item>
+        <item>Jogjakarta</item>
+        <item>Bandung</item>
+        <item>Medan</item>
+        <item>Jakarta</item>
+    </string-array>
+    <string-array name="title">
+        <item>Carls Jr</item>
+        <item>KFC</item>
+        <item>Mc.Donald</item>
+        <item>Burger King</item>
+        <item>Pizza Hut</item>
+    </string-array>
+    <string-array name="image">
+        <item>@drawable/promocjr</item>
+        <item>@drawable/promokfc</item>
+        <item>@drawable/promomcd</item>
+        <item>@drawable/promoburgerking</item>
+        <item>@drawable/promopizzahut</item>
+    </string-array>
+</resources>
