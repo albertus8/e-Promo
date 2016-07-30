@@ -22,4 +22,16 @@
         <item>@drawable/promoburgerking</item>
         <item>@drawable/promopizzahut</item>
     </string-array>
+    <string-array name="title_kategori">
+        <item>Food and Beverage</item>
+        <item>Entertainment</item>
+        <item>Clothes</item>
+        <item>Gadget and Electronics</item>
+    </string-array>
+    <string-array name="pict_kategori">
+        <item>@drawable/foodbeverage</item>
+        <item>@drawable/entertainment</item>
+        <item>@drawable/clothes</item>
+        <item>@drawable/gadget</item>
+    </string-array>
 </resources>
