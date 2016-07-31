@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-
         />
 
 
@@ -17,7 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-
         android:layout_marginTop="@dimen/md_keylines"
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
@@ -29,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
         android:layout_marginBottom="@dimen/md_keylines"
-
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"/>
 
@@ -39,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtuser"
         android:layout_marginTop="@dimen/md_keylines"
-
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
         android:text="Password"/>
@@ -50,7 +46,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:layout_marginBottom="@dimen/md_keylines"
-
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
         android:inputType="textPassword"/>
@@ -61,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtpassword"
         android:layout_marginTop="@dimen/md_keylines"
-
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
         android:text="Confirm Password"/>
@@ -72,7 +66,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/confirmpassword"
         android:layout_marginBottom="@dimen/md_keylines"
-
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
         android:inputType="textPassword"/>
@@ -83,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
-
         android:text="Register"/>
 
 

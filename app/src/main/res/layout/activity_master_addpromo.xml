@@ -98,7 +98,8 @@
         android:layout_marginLeft="@dimen/md_keylines"
         android:layout_marginRight="@dimen/md_keylines"
         android:id="@+id/btn_add"
-        android:text="Tambah Promo"/>
+        android:text="Tambah Promo"
+        android:onClick="tambahPromoAction" />
 
 
 </RelativeLayout>

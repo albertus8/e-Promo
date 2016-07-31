@@ -191,14 +191,14 @@ public class AddPromoActivity extends AppCompatActivity {
     }
 
 
-   /* public void onClick(View v){
-        if(v == buttonAdd){
-            Toast.makeText(AddPromoActivity.this, "asdsa", Toast.LENGTH_SHORT).show();
-            final String TAG = AddPromoActivity.class.getSimpleName();
-            Log.d(TAG,"tes");
-            TambahData();
-        }
-    }*/
+    /* public void onClick(View v){
+         if(v == buttonAdd){
+             Toast.makeText(AddPromoActivity.this, "asdsa", Toast.LENGTH_SHORT).show();
+             final String TAG = AddPromoActivity.class.getSimpleName();
+             Log.d(TAG,"tes");
+             TambahData();
+         }
+     }*/
     //Adding an employee
     void TambahData(){
         Spinner spinner = (Spinner)findViewById(R.id.pilihkategori);
