@@ -41,7 +41,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                if (a=="admin"){
+                if (a.equals("admin")){
 
 
                     Intent intent = new Intent(context, AddPromoActivity.class);
