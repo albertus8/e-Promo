@@ -13,23 +13,23 @@ import android.widget.Toast;
  * Created by Sentot Ariyono on 7/19/2016.
  */
 public class WelcomeActivity extends AppCompatActivity {
+    public static String a = "tes";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        Intent i = getIntent();
-        final String a = i.getStringExtra("access");
         Toast.makeText(getApplicationContext(), a ,Toast.LENGTH_SHORT).show();
-        Button btn_lihatpromo = (Button) findViewById(R.id.caripromo);
 
 
 
+        Button btn_caripromo = (Button) findViewById(R.id.caripromofab);
         Button btn_login = (Button) findViewById(R.id.login);
         Button btn_addpromo = (Button) findViewById(R.id.tambahpromo);
 
 
 
-        if (a=="admin"){;
+        if (a.isEmpty()){;
             btn_login.setText("LOG OUT");
             //btn_addpromo.setVisibility(View.GONE);
         }else{
@@ -53,12 +53,13 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        btn_lihatpromo.setOnClickListener(new View.OnClickListener() {
+
+
+        btn_caripromo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, MainActivity.class);
-                context.startActivity(intent);
+            public void onClick(View view) {
+                Context context = view.getContext();
+                startActivity(new Intent(context,LihatData.class));
             }
         });
 
