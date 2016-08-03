@@ -1,7 +1,9 @@
 # e-Promo
 
 # INSTALLATION
-- Folder 'epromo' harap dimasukkan kedalam htdocs. 
+- Folder 'epromo' harap dimasukkan kedalam htdocs
+- Tiap mengganti network, **IP localhost** harus disamakan dengan ipconfig network wireless adapter. 
+  * File **Config.java** dan **AddPromoActivity.java**
 - Pastikan fetch header updated
 
 # Changelog
