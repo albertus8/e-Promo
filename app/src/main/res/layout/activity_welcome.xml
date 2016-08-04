@@ -14,25 +14,16 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/welcome"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/namauser"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:layout_below="@+id/welcome"
-        android:layout_marginTop="@dimen/namauser"/>
 
     <Button
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:text="Cari Promo"
-        android:id="@+id/caripromo"
+        android:text="Cari Promo Manual"
+        android:id="@+id/caripromofab"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/caripromo"
         android:layout_weight="0.10" />
+
     <Button
         android:layout_width="190dp"
         android:layout_height="wrap_content"

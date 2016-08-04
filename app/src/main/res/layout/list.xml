@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        />
+    <Spinner
+        android:id="@+id/pilihkategoria"
+        android:layout_width="180dp"
+        android:name="kategori"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="@dimen/md_keylines"
+
+        android:popupBackground="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/toolbar">
+
+
+    </Spinner>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pilihkategoria"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/listView" />
+
+</RelativeLayout>

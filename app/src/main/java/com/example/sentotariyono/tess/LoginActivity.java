@@ -34,47 +34,41 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
                 EditText edtUsername = (EditText) findViewById(R.id.txtuser);
                 EditText edtPassword = (EditText) findViewById(R.id.txtpassword);
-                EditText edtConfPassword = (EditText) findViewById(R.id.txtconfirmpassword);
+
 
                 // jangan lupa cek ke db apakah user benar2 ada atau tidak
-                if (edtUsername.getText().toString().equals("") || edtPassword.getText().toString().equals("") || edtConfPassword.getText().toString().equals("")) {
+
+                if (edtUsername.getText().toString().equals("") || edtPassword.getText().toString().equals("")) {
                     Toast.makeText(LoginActivity.this, "Mohon isi terlebih dahulu", Toast.LENGTH_SHORT).show();
-                } else if (edtPassword.getText().toString().toLowerCase().equals(edtConfPassword.getText().toString().toLowerCase())) {
-                    Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
+                } else if (edtPassword.getText().toString().toLowerCase().equals(edtPassword.getText().toString().toLowerCase())) {
+                    //Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
                     /*Context context = v.getContext();
                     Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);*/
                 } else {
                     Toast.makeText(LoginActivity.this, "Password dan Confirm Password tidak cocok", Toast.LENGTH_SHORT).show();
                     edtPassword.setText("");
-                    edtConfPassword.setText("");
+                    //edtConfPassword.setText("");
                     edtPassword.requestFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.showSoftInput(edtPassword, InputMethodManager.SHOW_IMPLICIT);
                 }
-=======
-
-
-
 
                 if (usr.getText().toString().equals("admin") && pass.getText().toString().equals("admin")){
 
-
-
-
+                    WelcomeActivity.a="admin";
                     Context context = v.getContext();
                     Intent intent = new Intent(context, WelcomeActivity.class);
                     intent.putExtra("access", "admin");
                     context.startActivity(intent);
+
                 }else{
                     Context context = v.getContext();
                     Toast.makeText(context,"Invalid Username/Password", Toast.LENGTH_SHORT).show();
                 }
 
->>>>>>> origin/dev
             }
         });
     }
