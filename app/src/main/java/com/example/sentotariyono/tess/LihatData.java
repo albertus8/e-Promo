@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,6 +43,11 @@ public class LihatData extends AppCompatActivity implements ListView.OnItemClick
         listView = (ListView) findViewById(R.id.listView);
         // berikan event klik disini
         listView.setOnItemClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("e-Promo");
+        toolbar.setTitleTextColor(0xFFFFFFFF);
         //   Method GetJSON
         getJSON();
         menukategori();
@@ -78,11 +84,12 @@ public class LihatData extends AppCompatActivity implements ListView.OnItemClick
                 String id = jo.getString(Config.TAG_NAMA);
                 String nama = jo.getString(Config.TAG_DESKRIPSI);
                 String kategori = jo.getString(Config.TAG_KATEGORI);
-
+               //String gambar = jo.getString(Config.TAG_GAMBAR);
                 HashMap<String,String> mahasiswa = new HashMap<>();
                 mahasiswa.put(Config.TAG_NAMA,id);
                 mahasiswa.put(Config.TAG_DESKRIPSI,nama);
                 mahasiswa.put(Config.TAG_KATEGORI,kategori);
+                //mahasiswa.put(Config.TAG_GAMBAR, gambar);
                 list.add(mahasiswa);
             }
 

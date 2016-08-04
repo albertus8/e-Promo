@@ -47,7 +47,7 @@ public class AddPromoActivity extends AppCompatActivity {
     private ImageView imageView;
     private Bitmap bitmap;
     private Uri filePath;
-    public static final String UPLOAD_URL = "http://10.10.31.228/epromo/upload.php";
+    public static final String UPLOAD_URL = "http://192.168.1.4/epromo/upload.php";
     private String KEY_IMAGE = "image";
     private String KEY_NAME = "name";
 
