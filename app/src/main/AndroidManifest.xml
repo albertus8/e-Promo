@@ -23,9 +23,6 @@
         <activity android:name=".LoginActivity">
 
         </activity>
-        <activity android:name=".SearchActivity">
-    
-        </activity>
         <activity android:name=".LihatData"
             android:label="Lihat"
             android:parentActivityName=".WelcomeActivity">

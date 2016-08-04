@@ -36,9 +36,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText edtUsername = (EditText) findViewById(R.id.txtuser);
                 EditText edtPassword = (EditText) findViewById(R.id.txtpassword);
-                EditText edtConfPassword = (EditText) findViewById(R.id.txtconfirmpassword);
+
 
                 // jangan lupa cek ke db apakah user benar2 ada atau tidak
+
                 if (edtUsername.getText().toString().equals("") || edtPassword.getText().toString().equals("")) {
                     Toast.makeText(LoginActivity.this, "Mohon isi terlebih dahulu", Toast.LENGTH_SHORT).show();
                 } else if (edtPassword.getText().toString().toLowerCase().equals(edtPassword.getText().toString().toLowerCase())) {
@@ -55,12 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     imm.showSoftInput(edtPassword, InputMethodManager.SHOW_IMPLICIT);
                 }
 
-
-
-
                 if (usr.getText().toString().equals("admin") && pass.getText().toString().equals("admin")){
-
-
 
                     WelcomeActivity.a="admin";
                     Context context = v.getContext();

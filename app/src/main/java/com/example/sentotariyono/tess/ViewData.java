@@ -103,9 +103,10 @@ public class ViewData extends AppCompatActivity{
             String alamat = c.getString(Config.TAG_ALAMAT);
             String cp = c.getString(Config.TAG_CP);
             String deskripsi = c.getString(Config.TAG_DESKRIPSI);
-            String gambar = c.getString(Config.TAG_GAMBAR);
+            int gambar = getResources().getIdentifier(Config.TAG_GAMBAR, null, null);
 // Tampilkan setiap data JSON format kedalam setiap EditText
             //editTextId.setText(idd);
+            imageViewGambar.setImageResource(gambar);
             editTextNama.setText(nama);
             editTextKategori.setText(kategori);
             editTextAlamat.setText(alamat);
