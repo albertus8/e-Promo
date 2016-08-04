@@ -9,7 +9,6 @@
 # Changelog
 * Reborn v.1.1
   * Minor Update 
-
 * Reborn v.1.0
   * Mengganti dengan menu ListView
   * Login Admin
